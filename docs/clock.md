@@ -3,21 +3,16 @@ layout: page
 ---
 
 <script setup>
-
+    import ClockComponent from ".vitepress/components/ClockComponent.vue"
 </script>
 
 
 <div class="home-container">
-    <div class="home-title">WELCOME TO MY SPACE</div>
-    <br>
-    <div class="home-email"><a style="cursor: pointer;">Email: kexu567@gmail.com</a></div>
+    <ClockComponent />
 </div>
 
 
-
-
 <style>
-
     .home-container {
         width: 100vw;
         height: calc(100vh - var(--vp-nav-height) * 2);

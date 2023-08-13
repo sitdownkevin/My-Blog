@@ -1,4 +1,9 @@
-# Bb 增强 | Blackboard Enhanced
+---
+title: Bb 增强 | Blackboard Enhanced
+
+---
+
+# {{ $frontmatter.title }}
 
 ## 安装 
 ### 1. 安装油猴软件

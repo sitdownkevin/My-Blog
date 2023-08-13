@@ -1,13 +1,8 @@
 ---
 title: Notes of Topology
-date: 2022-06-14 21:35:29
-tags: 
-- Topology
-- Mathematics
-- TDA
-- Notes
-mathjax: true
 ---
+# {{ $frontmatter.title }}
+
 # Lesson 1: Topological Spaces
 
 ## Topological Spaces

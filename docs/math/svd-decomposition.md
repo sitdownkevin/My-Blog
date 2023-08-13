@@ -1,16 +1,10 @@
 ---
 title: 奇异值分解之美
-date: 2023-07-15 00:16:50
-tags:
-  - SCU
-  - Mathematics
-  - Linear Algebra
-mathjax: true
 ---
+# {{ $frontmatter.title }}
 
+---
 这学期我学习了三门与数学有关的课程，分别是线性代数、微分方程和选修课探寻数学的理与美。在探寻数学的理与美课上，我从不同老师的讲课中从另一个角度重新审视了数学之美以及它的用途。对于我而言，微分方程的用途总是十分直观的，而与之相比，线性代数则显得更加偏教科书化。尽管我学习了线性代数的各种基本知识与定理，但我仍然对其中的各种概念如特征值、零空间等缺乏立体的审视，因此我在课外阅读了许多将线性代数与几何相结合的资料，对知识的巩固加深了理解。在其中，令我印象最深的就是奇异值分解以及它在压缩图像上的应用。
-
-<!--more-->
 
 由于本学期的课程上教授还未教授奇异值分解的内容，对于奇异值分解相关知识的学习我几乎都是从不同的电子书以及一个名为“线代启示录”的台湾博客中了解到。一开始我先是粗略地浏览了很多资料，了解到奇异值分解的目的是为了把一个$m\times n$ 的矩阵分解成一个特定的形式。这种形式有点类似于我已经学习了的正交对角化的知识，只不过它处理的是一个正方形的矩阵，且有一定的局限性。在大多数的资料上，我发现它们都没有直接介绍奇异值分解的形式，而是引入了一个式子的推导：$Av_i=\sigma_iu_i$。其中$A$是一个$m\times n$的矩阵，$\sigma_i$是其所对应的奇异值。
 
@@ -20,9 +14,7 @@ mathjax: true
 
 对于矩阵$A^TA_{n\times n}$，假设对于 $A^TA$的特征值和特征向量为: $A^TAv_i=\sigma_i^2v_i,\ i=1,2,\ldots,n$
 
-$$
-\begin{aligned}A^TA[v_1:v_2:\vdots:v_n]=&[A^TAv_1:A^TAv_2:\dots:A^TAv_n]\\=& [\sigma_1^2v_1:\sigma_2^2v_2:\dots:\sigma_n^2v_n] \\=&[v_1:v_2:\dots:v_n]  \left[ \begin{matrix} \sigma_1^2&0&\cdots&0 \\ 0&\sigma_2^2&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&\sigma_n^2\end{matrix} \right]   \end{aligned}
-$$
+$$\begin{aligned}A^TA[v_1:v_2:\vdots:v_n]=&[A^TAv_1:A^TAv_2:\dots:A^TAv_n]\\=& [\sigma_1^2v_1:\sigma_2^2v_2:\dots:\sigma_n^2v_n] \\=&[v_1:v_2:\dots:v_n]  \left[ \begin{matrix} \sigma_1^2&0&\cdots&0 \\ 0&\sigma_2^2&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&\sigma_n^2\end{matrix} \right]   \end{aligned}$$
 
 令矩阵$V$ 为$[v_1:v_2:\dots:v_n]$
 

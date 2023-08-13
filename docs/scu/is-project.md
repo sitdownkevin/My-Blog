@@ -1,18 +1,13 @@
 ---
 title: Report | Rolling Thunder Bicycles Company
-date: 2023-07-15 00:33:59
-tags:
-- Report
-- Information System
-- SCUPI
-- SQL
 ---
+# {{ $frontmatter.title }}
 
-# 1. **Identifying Root Cause for Quality Issues and Estimate Overall Cost**
+## 1. **Identifying Root Cause for Quality Issues and Estimate Overall Cost**
 
-## 1.1 Retrieve the Data
+### 1.1 Retrieve the Data
 
-### 1.1.1 Tag the defected bicycles
+#### 1.1.1 Tag the defected bicycles
 
 We can make fully use of the Customer ID of whose bicycles are defected to find out which parts of the bicycle are in the wrong way.
 
@@ -23,9 +18,9 @@ SELECT iif(B.CustomerID in (26160, 40505, 29577, 40579, 18043, 41008, 2281, 4079
 ```
 <!--more-->
 
-## 1.2 Analyze the Data
+### 1.2 Analyze the Data
 
-### 1.2.1 Possible root cause: Category and Manufacturer
+#### 1.2.1 Possible root cause: Category and Manufacturer
 
 Calculate the defect rate of each category of component produced by different manufacturer. 
 
@@ -63,7 +58,7 @@ Based on 95% Confidence Interval, some defect rate are abnormal (greater than 0.
 
 ![Fig 1-3 Defect Rate/Group](https://s2.loli.net/2023/07/17/1nwtlDeKikr4gUQ.png)
 
-### 1.2.3 Possible root cause: ModelType and Material
+#### 1.2.3 Possible root cause: ModelType and Material
 
 Calculate the defect rate of seven types of bicycle model type and the defect rate of each material used to build the bicycle.
 
@@ -80,7 +75,7 @@ GROUP BY S.ModelType
 ORDER BY count(S.isDefect) / count(*) DESC;
 ```
 
-### 1.2.4 Suspicious bicycles
+#### 1.2.4 Suspicious bicycles
 
 Some manufacturer, category of Components, component group, model type and material of the bicycle’s frame have high defect rate. Based on 95% confident interval of each option, we can set a standard (table below) to select bicycles in all of the high defect rate options. Those bicycles are suspected to have internal quality issues. 
 
@@ -114,7 +109,7 @@ C.ManufacturerID in (68, 58, 46)
 ORDER BY B.SerialNumber;
 ```
 
-### 1.2.5 Recalled plan
+#### 1.2.5 Recalled plan
 
 It is sure that these bicycles should be recalled. After recalling them, there are two plans to deal with them: **replace the suspicious components** or **sent customer’s money back**. 
 
@@ -139,23 +134,23 @@ select sum(Resent) as Recall, sum(Min) as Minimum, sum(Max) as Maximum
 from S11_Recall;
 ```
 
-## 1.3 Conclusion
+### 1.3 Conclusion
 
-### 1.3.1 Possible root cause
+#### 1.3.1 Possible root cause
 
 The **Manufacturer, Category and Manufacturer of component, manufacturing group, bicycle’s modeltype and bicycle’s material** are possible root cause. If any of them of one bicycle meet the condion in the table in 1.2.4, this bicycle are regarded as having an internal quality issue.
 
-### 1.3.2 Recall
+#### 1.3.2 Recall
 
 If the company choose to recall the possible bad bicycles and sent customer’s money back, the cost is approximately **$4,806,180**.
 
 If the company choose to recall the possible bad bicycles and replace their components, the cost is estimated between **$844,164 and $1,332,050**. 
 
-# 2. **Forecasting for Capacity Expansion**
+## 2. **Forecasting for Capacity Expansion**
 
-## 2.1 Retrieve the Data
+### 2.1 Retrieve the Data
 
-### 2.1.1 Data processing
+#### 2.1.1 Data processing
 
 ```sql
 SELECT B.OrderDate, Year([B.OrderDate]) AS [Year], Month([B.OrderDate]) AS [Month], Day([B.OrderDate]) AS [Day], B.ModelType AS ModelType, B.FrameSize AS FrameSize, B.LetterStyleID AS LetterStyle, P.ColorName AS Color, C.City AS City, count(*) AS Amount, sum(B.SalePrice) AS TotalSell, (sum(B.SalePrice) - sum(B.SalesTax) - sum(B.ShipPrice) - sum(B.FramePrice) - sum(B.ComponentList)) AS Profit
@@ -164,9 +159,9 @@ WHERE (B.PaintID = P.PaintID) and (R.StoreID = B.StoreID) and (C.CityID = R.City
 GROUP BY B.OrderDate, Year([B.OrderDate]), Month([B.OrderDate]), Day([B.OrderDate]), B.ModelType, B.FrameSize, B.LetterStyleID, P.ColorName, C.City;
 ```
 
-## 2.2 Analyze the Data
+### 2.2 Analyze the Data
 
-### 2.2.1 Sales Amount: Roughly Description
+#### 2.2.1 Sales Amount: Roughly Description
 
 In Fig 2-1(a), the amounts of bicycle order is plotted along the daily date axis. Moving Average 30 Days(MA30) is also plotted. From the MA30, we can easily find the sale trend. **The regular periodic fluctuate trend has appeared since 2010**. 
 
@@ -186,7 +181,7 @@ FROM S2 AS S
 GROUP BY S.OrderDate, S.Year, S.Month, S.Day;
 ```
 
-### 2.2.2 Sales Amount: ModelType and Color
+#### 2.2.2 Sales Amount: ModelType and Color
 
 The company produces bicycles in **6 types of models** and **13 types of colors**. Using SQL and Tableau, we can see that the popular trend of each model type and color and their amounts ratio in the whole company.
 
@@ -208,7 +203,7 @@ FROM S2 AS B
 GROUP BY B.Year, B.Month, B.ModelType;
 ```
 
-### 2.2.3 Sales Quantity: Volume and Profit
+#### 2.2.3 Sales Quantity: Volume and Profit
 
 The business volume and the profit are both increasing yearly. The profit are from **$1,747,584 in 1999** to **$4,217,397 in 2012**. The lowest profit rate is 1.92% in 2005. In recent 4 years the profit rate are greater than 20%, which means the company has a great operation condition.
 
@@ -216,7 +211,7 @@ Using simple linear regression and 95% confidence interval, we expect that **in 
 
 ![Fig 2-4](https://s2.loli.net/2023/07/17/v5RBlq3PwG1fZis.png)
 
-### 2.2.5 Sale Profit: ModelType and Color
+#### 2.2.5 Sale Profit: ModelType and Color
 
 Using SQL and Tableau, the relationship between profit rate and color or model type is figured.
 
@@ -226,21 +221,21 @@ Different **types of bicycle model** have obviously difference of profit rate. *
 
 ![Fig 2-5 Profit Rate/ModelType&Color](https://s2.loli.net/2023/07/17/GsQiVbR3WrtEa9C.png)
 
-### 2.2.6 Sale Profit: State
+#### 2.2.6 Sale Profit: State
 
 Half of the states have a profit rate above 15%. Some states like **AL, CA, IL and TX** have a high sale volume. But their profit rate are lower than normal condition of all states.  It reveals a phenomenon that when the business in a state becomes huge, the profit rate of this state will decrease. State **PA** is the unique one which has high business volume and profit rate. The company should make deeply analysis of this state and find out reason why this state is successful to balcance both.
 
 ![Fig 2-6 Volume/State & Profit Rate/State](https://s2.loli.net/2023/07/17/VPcm4uqBrJSHFod.png)
 
-## 2.3 Conclusion
+### 2.3 Conclusion
 
-### 2.3.1 Sales trend
+#### 2.3.1 Sales trend
 
 Commonly, in the end of the year especially the November, the sale amounts of the bicycles achieve the peak. The yearly sales amounts are fluctuating around 2240. The profit are from $1,747,584 in 1999 to $4,217,397 in 2012.  In recent 4 years the profit rate are greater than 20%.
 
 The Mountain bicycles are the most welcomed model type and customer has no preference in color of bicycles.
 
-### 2.3.2 Forecasting
+#### 2.3.2 Forecasting
 
 We hope the company will sell at least 2240 bicycles in next year. The sale volume will be 16 million dollars, the profit will be 3 million dollars and the profit rate will be 23.68%.
 
@@ -248,11 +243,11 @@ The company will soonly **sell more Hybrid model type bicycles** in recent years
 
 The company will **learn the experience of State PA** so that help other states which has a huge business volume increase their profit rate.
 
-# 3. Ad Hoc Problem Solving
+## 3. Ad Hoc Problem Solving
 
-## 3.1 Retrieve the Data
+### 3.1 Retrieve the Data
 
-### 3.1.1 Search the possible bicycle according to clues
+#### 3.1.1 Search the possible bicycle according to clues
 
 Clues below: 
 
@@ -274,9 +269,9 @@ WHERE (B.ModelType = "Road") and
 ORDER BY B.OrderDate;
 ```
 
-## 3.2 Analyze the Data
+### 3.2 Analyze the Data
 
-### 3.2.1 Divide large group into smaller one (Group By)
+#### 3.2.1 Divide large group into smaller one (Group By)
 
 In the data retrieving step, bicycles which meet the condition are found. However, there are still a lot of bicycles that match the condition. Therefore, we need to consider other information that do help search the wanted bicycle and its owner.
 
@@ -295,9 +290,9 @@ GROUP BY B.ModelType, B.FrameSize, B.TopTube, B.ColorName, B.ColorStyle, B.Store
 ORDER BY count(*) DESC;
 ```
 
-## 3.3 Conclusion
+### 3.3 Conclusion
 
-### 3.3.1 Find the bicycle
+#### 3.3.1 Find the bicycle
 
 We hope policemen provide further information about **frame size, top tube size, color style and city name**, and we use SQL to find the corresponded customer.
 
@@ -321,11 +316,11 @@ WHERE (B.ModelType = "Road") and (B.OrderDate > #1998-01-01#) and (R.StoreID = B
 ORDER BY B.OrderDate;
 ```
 
-# 4. Cost, Delivery, and Continuous Improvement
+## 4. Cost, Delivery, and Continuous Improvement
 
-## 4.1 Retrieve the Data
+### 4.1 Retrieve the Data
 
-### 4.1.1 Days
+#### 4.1.1 Days
 
 ```sql
 SELECT B.SerialNumber AS SerialNumber, B.ModelType AS ModelType, B.OrderDate AS OrderDate, B.StartDate AS StartDate, B.ShipDate AS ShipDate, B.SaleState AS State, C.City AS City
@@ -338,9 +333,9 @@ SELECT B.SerialNumber AS SerialNumber, B.OrderDate AS OrderDate, (B.StartDate - 
 FROM S4 AS B;
 ```
 
-## 4.2 Analyze the Data
+### 4.2 Analyze the Data
 
-### 4.2.1 Prepared days shortening
+#### 4.2.1 Prepared days shortening
 
 According to the data of OrderDate, StartDate and ShipDate, we can compute the component preparing days, assembling days and total days. The less total days, customer receives their bicycles sooner. Therefore, it is important to derease both the component preparing days and assmebling days. 
 
@@ -369,7 +364,7 @@ group by C.ComponentID) and
 C.QuantityOnHand > 100);
 ```
 
-### 4.2.2 Cost decreasing: RetailStore
+#### 4.2.2 Cost decreasing: RetailStore
 
 In 2.2.6, we already have the conclusion that areas which have high business volume have low pofit rate. In order to decrease the cost, we can cut down some retail stores in such areas. 
 
@@ -382,7 +377,7 @@ GROUP BY RetailStore.CityID
 HAVING (((Count(*))>19));
 ```
 
-### 4.2.3 Cost decreasing: Component discount
+#### 4.2.3 Cost decreasing: Component discount
 
 While purchasing the component, it is usually having a discount. In 2014, the yearly component cost is $7,224,258 and the discount rate is 2.51%. If in next year, the company can ask partner for better discount and let the discount rate increase to 3.00%, **the company can save approximately 36 thousands dollars.** 
 
@@ -392,19 +387,19 @@ FROM PurchaseOrder
 WHERE OrderDate > #2014-01-01#;
 ```
 
-## 4.3 Conclusion
+### 4.3 Conclusion
 
-### 4.3.1 Data collecting
+#### 4.3.1 Data collecting
 
 To avoid the situation like dirty data of orderdate from 1999 to 2001, the company will build a new Logistics and Distribution system to record each order data of saled bicycles. Each manufacturer will join in the new **Parter Relationship Management** and use the same standard to record assembling data. 
 
 In the BikeParts of the Database, the SubstitudeID column exists **but with all zero values**. If this data can provide the meaningful information, we can continue decrease the cost of the company by using substituted components. Therefore, the clerks should fill the SubstituteID data in the database. 
 
-### 4.3.2 Delivery days shortening
+#### 4.3.2 Delivery days shortening
 
 Through the ERP system, inventory **make each prepared rate of components around 79.97%**. After this new system is equipped, we expect the component preparing days decreased a lot.
 
-### 4.3.3 Cost decreasing
+#### 4.3.3 Cost decreasing
 
 Assuming the total cost of the company is same as in 2014 and is 9 million dollars. After cutting down the amounts of retail store and purchasing the components in a better price, **the company can save approximately 8.84% of cost**.
 
@@ -413,7 +408,7 @@ select FormatPercent((36000+19 * 40000) / 9000000)
 from S4;
 ```
 
-# 5. Appendix
+## 5. Appendix
 
 The original SQL is in the Access file. The SQL is also transferred as Excel file.
 
