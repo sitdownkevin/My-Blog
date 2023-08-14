@@ -2,8 +2,10 @@
 title: PyPI
 layout: doc
 ---
-
 # {{ $frontmatter.title }}
+:::tip
+换成清华源
+:::
 
 
 ## 临时使用
@@ -17,7 +19,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 ```shell
 # 确保pip更新至最新版本
 # python -m pip install --upgrade pip
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple // [!code warning]
 ```
 
 ## 配置多个镜像源
@@ -45,4 +47,4 @@ http://pypi.douban.com/simple/
 http://mirrors.aliyun.com/pypi/simple/
 ```
 
-（更多镜像站可参考清华大学开源软件镜像站下的[校园网联合镜像站](https://mirrors.cernet.edu.cn/site)）
+>更多镜像站可参考清华大学开源软件镜像站下的[校园网联合镜像站](https://mirrors.cernet.edu.cn/site)

@@ -3,15 +3,16 @@ title: 使用Git的一些步骤
 ---
 # {{ $frontmatter.title }}
 
-> 参考资料：https://www.liaoxuefeng.com/wiki/896043488029600
+::: info 参考资料
 
-## 安装Git
-```shell
-sudo apt-get install git
-```
+1. https://www.liaoxuefeng.com/wiki/896043488029600 
+2. https://www.runoob.com/git/git-tutorial.html
 
-## 配置邮箱和用户名
+:::
 
+[[toc]]
+
+## 配置 Git 邮箱和用户名
 
 ```shell
 git config --global user.name "<user_name>"
@@ -44,6 +45,25 @@ git status
 git diff <file_name>
 ```
 
+### 分支管理
+
+```shell
+# 查看分支
+git branch
+
+# 创建分支
+git branch <branch_name>
+
+# 切换分支
+git checkout <branch_name>
+
+# 删除分支
+git branch -d <branch_name>
+
+# 合并分支
+git merge
+```
+
 ## 远程仓库（Github）
 
 ### SSH 连接
@@ -53,9 +73,9 @@ git diff <file_name>
 ssh-keygen -t rsa -C "<user_email>"
 ```
 
-然后把这个公钥设置到Github中
+> 把这个公钥设置到Github中
 
-### 推送到远程仓库
+### 推送（Push）到远程仓库
 
 ```shell
 # 添加远程仓库
@@ -66,6 +86,16 @@ git push -u origin master
 
 # (只有第一次推送需要参数 -u)
 git push origin master
+```
+
+### 从远程仓库拉取（Pull）
+```shell
+# 格式
+git pull <远程主机名>  <远程分支名>:<本地分支名>
+
+# 示例
+git pull origin master:master
+git pull origin master # 本地分支名可省略
 ```
 
 ### 更改远程仓库
@@ -86,7 +116,9 @@ git remote -v
 git remote rm <origin>
 ```
 
-## 额外的：配置代理
+## 额外的
+
+### 配置代理
 
 ```shell
 # http
@@ -99,5 +131,9 @@ git config --global https.proxy 'http://127.0.0.1:7890'
 git config --list
 ```
 
-## 常见问题
+### 种族主义和奴隶制度
 
+```shell
+# 防止master带来的种族主义和奴隶制度问题，Github使用main替代master分支
+git branch -M main
+```

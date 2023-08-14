@@ -102,20 +102,39 @@ export default defineConfig({
     logo: '/icons/k-avt.jpg',
     nav: [
       {
+        text: '美学',
+        items: [
+          {
+            text: '设计',
+            items: [
+              { text: '时钟', link: '/design/clock' }
+            ]
+          },
+          {
+            text: '其他',
+            items: [
+              { text: 'LaTeX', link: '/design/latex' }
+            ]
+          }
+        ]
+      },
+      {
         text: '环境',
         items: [
           {
             text: '换源',
             items: [
-              { text: 'NPM', link: '/myconfig/source-npm' },
               { text: 'Conda', link: '/myconfig/source-conda'},
-              { text: 'PyPI', link: '/myconfig/source-pypi' }
+              { text: 'PyPI', link: '/myconfig/source-pypi' },
+              { text: 'NPM', link: '/myconfig/source-npm' },
+              { text: 'Yarn', link: 'myconfig/source-yarn' }
             ]
           },
           {
             text: '脚手架',
             items: [
               { text: 'Git', link: '/myconfig/tools-git' },
+              { text: 'Docker' , link: '/myconfig/tools-docker' }
             ]
           }
         ]
@@ -130,12 +149,17 @@ export default defineConfig({
             ]
           },
           {
+            text: '数据结构',
+            items: [
+              { text: 'LRU', link: '/code/lru-cache' }
+            ]
+          },
+          {
             text: '其他',
             items: [
               { text: '网络编程', link: '/code/网络编程' },
               { text: 'Flask | Nginx', link: '/code/Flask以及Nginx'},
-              { text: 'Solidity', link: '/code/Solidity小记' },
-              { text: 'Docker' , link: '/code/Docker Tips' }
+              { text: 'Solidity', link: '/code/Solidity小记' }
             ]
           }
         ]
@@ -147,14 +171,14 @@ export default defineConfig({
             text: '线性代数',
             items: [
               { text: 'Delta Function', link: '/math/delta-function'},
-              { text: 'SVD Decomposition', link: '/math/svd-decomposition'},
-              { text: 'Topology', link: '/math/intro-topo' }
+              { text: 'SVD Decomposition', link: '/math/svd-decomposition'}              
             ]
           },
           {
             text: '其他',
             items: [
-              { text: '密码学', link: '/math/密码学小记' }
+              { text: '密码学', link: '/math/密码学小记' },
+              { text: 'Topology', link: '/math/intro-topo' }
             ]
           }
         ]
@@ -165,8 +189,10 @@ export default defineConfig({
           {
             text: 'SCU',
             items: [
-              { text: 'Bb 增强', link: '/scu/bb-enhanced' },
-              { text: 'IS Project', link: '/scu/is-project' }
+              { text: 'Bb Enhanced', link: '/notes/scu/bb-enhanced' },
+              { text: 'IS Project', link: '/notes/scu/is-project' },
+              { text: 'Prob Review', link: '/notes/scu/review-prob' },
+              { text: 'Media Literacy', link: 'notes/scu/media-literacy' }
             ]
           }
         ]

@@ -1,9 +1,8 @@
 ---
 layout: page
 ---
-
 <script setup>
-    import ClockComponent from ".vitepress/components/ClockComponent.vue"
+    import ClockComponent from "../.vitepress/components/ClockComponent.vue"
 </script>
 
 
@@ -20,12 +19,6 @@ layout: page
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
-        .home-title {
-            font-size: 1.5rem;
-            user-select: none;
-        }
     }
-
 
 </style>

@@ -2,37 +2,27 @@
 title: NPM
 layout: doc
 ---
-
 # {{ $frontmatter.title }}
 
-## 临时使用
+## 换源
 
 ```shell
+# 临时使用
 npm --registry https://registry.npm.taobao.org install express
-```
 
-## 永久使用
+# 永久使用
+npm config set registry https://registry.npm.taobao.org  // [!code warning]
 
-```shell
-npm config set registry https://registry.npm.taobao.org
-```
-
-## 配置 CNPM
-
-```shell
+# 配置 CNPM
 npm install -g cnpm --registry=https://registry.npm.taobao.org
-```
 
-## 恢复使用
-
-```shell
+# 恢复默认
 npm config set registry https://registry.npmjs.org
 ```
 
-## 验证是否设置成功
+## 其他命令
 
 ```shell
-npm info express
-or
-npm config get registry
+# 验证是否设置成功
+npm info express # npm config get registry
 ```

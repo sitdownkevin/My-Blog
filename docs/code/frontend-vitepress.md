@@ -4,7 +4,7 @@ title: Vitepress 的一些配置
 # {{ $frontmatter.title }}
 
 ## LaTeX Support
-:::tip
+::: tip
 `markdown-it-katex` 和 `markdown-it-mathjax3` 两个插件都支持 LaTeX 公式的引入，前者对 `\begin{aligned}` 等语句的支持不好，后者基于前者有了很多改进。
 :::
 
@@ -142,3 +142,28 @@ mjx-container > svg { // [!code focus]
   margin: auto; // [!code focus]
 } // [!code focus]
 ```
+
+## `header` 响应式Bug修复
+
+::: tip 存在的问题
+
+窗口切换不同尺寸，`header` 会出现抖动。
+
+:::
+
+```stylus
+
+header {
+  .container {
+    margin: 0 0 0 0!important; // [!code focus]
+    max-width: calc(var(--vp-layout-max-width))!important; // [!code focus]
+
+    @media (min-width: 960px) {
+      .content-body {
+        width: calc(100vw - 200px); // [!code focus]
+      }
+    }
+  }
+}
+```
+

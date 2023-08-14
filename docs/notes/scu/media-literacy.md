@@ -1,17 +1,14 @@
 ---
-title: Notes of Media Literacy
-date: 2023-02-22 23:01:56
-tags: 
-- Media Literacy
-- Notes
-- SCUPI
+title: Notes of Media Literacy (HSS Elective)
 ---
+# {{ $frontmatter.title }}
 
-# HSS Elective: Media Literacy
-
+:::tip
 Instructor: yumei.li@scupi.cn
+:::
 
-# Forum 1
+
+## Forum 1
 
 - Think about your personal experiences with the media.
 - ~~Identify a favorite media product from your childhood—a song, book, TV show, or movie etc.~~ ~~Describe what it was about.~~ ~~Why was it so important to you?~~ How much of an impact did your early taste in media have on your perception of yourself? How has your taste shifted over time? Do your current media preferences reveal anything about you?
@@ -29,7 +26,7 @@ After that, I gradually practiced thinking independently instead of readily acce
 
 ---
 
-# Forum 2
+## Forum 2
 
 Explore one current event topic online. Find two news reports on the same event, one Chinese and one English from outside of China.
 
@@ -52,7 +49,7 @@ Links:
 
 ---
 
-# Forum 3
+## Forum 3
 
 - ~~Have a conversation with your grandparent(s)/parent(s) . Compare your childhood heroes and heroines with hers/his/ theirs .~~
 - ~~What differences are there between the generations in what you consider heroic qualities?~~
@@ -74,7 +71,7 @@ There are many media product that helps establish values in people’s mind. The
 
 ---
 
-# Forum 4
+## Forum 4
 
 This article posted news that the stock market of both mainland China and Hongkong become bearish recently. It thought that China took a more strict policy to keep the virus out of the country, which greatly influenced some ports, especially in those cities like Shenzhen, Shanghai, and Ningbo, where the number of confirmed increased rapidly. It revealed some opinions of specialists from different areas. All of those opinions agreed that the Chinese government's strict "zero tolerance" strategy is improper and will affect the Chinese economy and the global market.
 
@@ -88,7 +85,7 @@ In my opinion, this article is an ordinary article among these kinds of media wh
 
 ---
 
-# Forum 5
+## Forum 5
 
 - This is an ongoing conversation on media representation of nationality/ethnicity. Choose a film that affects your perception of westerners [“a native or inhabitant of the west, especially of western Europe or North America” (“Westerner” as defined by *Merriam-Webster*) ].
 - In your own words, briefly describe (less than 50 words) what this film is about (Avoid plagiarism by summarizing in your own words. A direct copy-paste from the internet will lead to a zero for the post.)
@@ -108,7 +105,7 @@ This film was definitely a successful media product since its rating on Douban w
 
 ---
 
-# Forum 6
+## Forum 6
 
 This is an ongoing conversation on media representation of nationality/ethnicity. How much do we know about people from other countries?  Choose a media piece (it can be a film, a music video, a TV drama, a news article, etc.) that affects your perception of non-westerners other than Chinese. Russia/Ukraine will not count because we have discussed them already.
 
@@ -131,7 +128,7 @@ link:
 
 ---
 
-# Forum 7
+## Forum 7
 
 For this week’s forum about gender, you are going to *select a piece of media* and *describe the roles of female and male characters in it*. This media piece can be *a film, a music video, or a TV drama*.
 
@@ -159,7 +156,7 @@ Link: [https://en.wikipedia.org/wiki/Malèna_(film)](https://en.wikipedia.org/wi
 
 ---
 
-# Forum 8
+## Forum 8
 
 ****Forum 8 Your understanding of LGBT and the media representation****
 
@@ -180,7 +177,7 @@ My further question is when the new generation grow up and master the society, c
 
 ---
 
-# Forum 9
+## Forum 9
 
 This week’s online forum will focus on representations of people with disabilities in the media. Please read Chapter 12 “Representations of People with Disabilities” in *Diversity in US Mass Media*.
 
@@ -199,7 +196,7 @@ My further question is that does the phenomenon of little present of disabled po
 
 ---
 
-# Forum 10
+## Forum 10
 
 For this forum, you will need to refer to the final project guideline and design your own media project. Please address the following items:
 

@@ -1,16 +1,15 @@
 ---
 title: 数据结构 | Least Recently Used (LRU)
-date: 2023-07-15 17:03:52
-tags:
-- Data Structure
-- Algorithm
 ---
+# {{ $frontmatter.title }}
+
+::: tip
 Least Recently Used, 页面置换算法，是一种缓存淘汰策略。手机内存清理界面就是LRU的一个生动例子。
 
 用双向链表实现。
+:::
 
-<!--more-->
-```C++
+``` C
 #include <iostream>
 #include <unordered_map>
 using namespace std;

@@ -1,37 +1,23 @@
 ---
-title: Conda | PyPI | NPM 换国内源
+title: Conda
 layout: doc
 ---
-
 # {{ $frontmatter.title }}
+:::tip
+换成清华源
+:::
 
-## 快速操作
-
-```shell
-conda config --set show_channel_urls yes
-```
-
-```shell
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-```
-
-```shell
-npm config set registry https://registry.npm.taobao.org
-```
-
-## Conda
-
-### 临时使用
+## 临时使用
 
 ```shell
 conda install package -c <url>
 ```
 
-### 设为默认
+## 设为默认
 
-#### 方法一：将下列内容粘贴至`.condarc`文件中
-
-```shell
+### 方法一：将下列内容粘贴至 `.condarc` 文件中
+::: code-group
+```shell [.condarc]
 channels:
   - defaults
 show_channel_urls: true
@@ -48,103 +34,36 @@ custom_channels:
   pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
+:::
 
-`.condarc` 文件地址
 
-> Windows -> `C:\\Users\\username\\`
+::: info `.condarc` 文件地址
+
+> Windows -> `C:\\Users\\<user_name>\\`
 
 ```shell
 # Windows系统默认无 .condarc 文件，需要执行代码生成 .condarc，例如：
-conda config --set show_channel_urls yes
+conda config --set show_channel_urls yes // [!code warning]
 ```
 
-> macOS -> `/users/username/`
+> macOS -> `/users/<user_name>/`
 
-> Linux -> `/home/username/`
+> Linux -> `/home/<user_name>/`
 
-#### 方法二：命令行内替换
+:::
+
+
+
+### 方法二：命令行内替换
 
 ```shell
 conda config --add channels <url>
 ```
 
-### 其他操作
+## 其他操作
 
-清除索引缓存 `conda clean -i`
-
-## PyPI
-
-### 临时使用
-
+ 
 ```shell
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
-```
-
-### 设为默认
-
-```shell
-# 确保pip更新至最新版本
-# python -m pip install --upgrade pip
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-```
-
-### 配置多个镜像源
-
-```shell
-pip config set global.extra-index-url "<url1> <url2>..."
-```
-
-### 其他镜像源
-
-```shell
-# 中国科学技术大学
-https://pypi.mirrors.ustc.edu.cn/simple/
-
-# 华中理工大学
-http://pypi.hustunique.com/
-
-# 山东理工大学
-http://pypi.sdutlinux.org/
-
-# 豆瓣
-http://pypi.douban.com/simple/
-
-# 阿里云
-http://mirrors.aliyun.com/pypi/simple/
-```
-
-（更多镜像站可参考清华大学开源软件镜像站下的[校园网联合镜像站](https://mirrors.cernet.edu.cn/site)）
-
-## NPM
-
-### 临时使用
-
-```shell
-npm --registry https://registry.npm.taobao.org install express
-```
-
-### 永久使用
-
-```shell
-npm config set registry https://registry.npm.taobao.org
-```
-
-### 配置 CNPM
-
-```shell
-npm install -g cnpm --registry=https://registry.npm.taobao.org
-```
-
-### 恢复使用
-
-```shell
-npm config set registry https://registry.npmjs.org
-```
-
-### 验证是否设置成功
-
-```shell
-npm info express
-or
-npm config get registry
+# 清除索引缓存
+conda clean -i
 ```
