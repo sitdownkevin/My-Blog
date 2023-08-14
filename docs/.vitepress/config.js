@@ -107,7 +107,8 @@ export default defineConfig({
           {
             text: '设计',
             items: [
-              { text: '时钟', link: '/design/clock' }
+              { text: '时钟', link: '/design/clock' },
+              { text: 'Lib-dev', link: '/design/lib' }
             ]
           },
           {
