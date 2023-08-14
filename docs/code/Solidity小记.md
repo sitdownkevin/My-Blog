@@ -1,6 +1,14 @@
-# Solidity 常常困惑
+---
+title: Solidity 小记
+layout: doc
 
-> 仅记录学习Solidity当中感到困惑的问题
+---
+
+# {{ $frontmatter.title }}
+
+::: tip
+仅记录学习Solidity当中感到困惑的问题
+::: 
 
 ## 函数修饰符
 

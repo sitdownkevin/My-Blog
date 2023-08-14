@@ -1,12 +1,21 @@
-# 使用Git的一些步骤
+---
+title: 使用Git的一些步骤
+---
+# {{ $frontmatter.title }}
 
 > 参考资料：https://www.liaoxuefeng.com/wiki/896043488029600
 
-## 配置邮箱和用户名（必须操作）
+## 安装Git
+```shell
+sudo apt-get install git
+```
+
+## 配置邮箱和用户名
+
 
 ```shell
-git config --global user.name "Ke Xu"
-git config --global user.email "kexu567@gmail.com"
+git config --global user.name "<user_name>"
+git config --global user.email "<user_email>"
 ```
 
 ## 常规操作
@@ -41,7 +50,7 @@ git diff <file_name>
 
 ```shell
 # 创建 SSH Key
-ssh-keygen -t rsa -C "<email>"
+ssh-keygen -t rsa -C "<user_email>"
 ```
 
 然后把这个公钥设置到Github中
@@ -51,7 +60,6 @@ ssh-keygen -t rsa -C "<email>"
 ```shell
 # 添加远程仓库
 git remote add origin git@github.com:<user_name>/<repo_name>.git
-git remote add origin git@github.com:sitdownkevin/Python-Scripts.git
 
 # 推送到远程仓库
 git push -u origin master

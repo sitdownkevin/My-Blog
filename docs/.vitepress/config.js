@@ -1,6 +1,96 @@
 import { defineConfig } from 'vitepress'
-import markdownItKatex from 'markdown-it-katex'
 
+import markdownItMathjax3 from 'markdown-it-mathjax3'
+
+const customElements = [
+  'mjx-container',
+  'mjx-assistive-mml',
+  'math',
+  'maction',
+  'maligngroup',
+  'malignmark',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mi',
+  'mlongdiv',
+  'mmultiscripts',
+  'mn',
+  'mo',
+  'mover',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'ms',
+  'mscarries',
+  'mscarry',
+  'mscarries',
+  'msgroup',
+  'mstack',
+  'mlongdiv',
+  'msline',
+  'mstack',
+  'mspace',
+  'msqrt',
+  'msrow',
+  'mstack',
+  'mstack',
+  'mstyle',
+  'msub',
+  'msup',
+  'msubsup',
+  'mtable',
+  'mtd',
+  'mtext',
+  'mtr',
+  'munder',
+  'munderover',
+  'semantics',
+  'math',
+  'mi',
+  'mn',
+  'mo',
+  'ms',
+  'mspace',
+  'mtext',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'msqrt',
+  'mstyle',
+  'mmultiscripts',
+  'mover',
+  'mprescripts',
+  'msub',
+  'msubsup',
+  'msup',
+  'munder',
+  'munderover',
+  'none',
+  'maligngroup',
+  'malignmark',
+  'mtable',
+  'mtd',
+  'mtr',
+  'mlongdiv',
+  'mscarries',
+  'mscarry',
+  'msgroup',
+  'msline',
+  'msrow',
+  'mstack',
+  'maction',
+  'semantics',
+  'annotation',
+  'annotation-xml',
+];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -17,9 +107,15 @@ export default defineConfig({
           {
             text: '换源',
             items: [
-              { 'text': 'NPM', 'link': '/myconfig/source-npm' },
-              { 'text': 'Conda', 'link': '/myconfig/source-conda'},
-              { 'text': 'PyPI', 'link': '/myconfig/source-pypi' }
+              { text: 'NPM', link: '/myconfig/source-npm' },
+              { text: 'Conda', link: '/myconfig/source-conda'},
+              { text: 'PyPI', link: '/myconfig/source-pypi' }
+            ]
+          },
+          {
+            text: '脚手架',
+            items: [
+              { text: 'Git', link: '/myconfig/tools-git' },
             ]
           }
         ]
@@ -28,9 +124,17 @@ export default defineConfig({
         text: '编程',
         items: [
           {
-            text: 'Python',
+            text: '前端',
             items: [
-              { text: 'Python 基础', link: '/program/basic'},
+              { text: 'Vitepress', link: '/code/frontend-vitepress'},
+            ]
+          },
+          {
+            text: '其他',
+            items: [
+              { text: '网络编程', link: '/code/网络编程' },
+              { text: 'Flask和Nginx', link: '/code/Flask以及Nginx'},
+              { text: 'Solidity 小记', link: '/code/Solidity小记' }
             ]
           }
         ]
@@ -44,6 +148,12 @@ export default defineConfig({
               { text: 'Delta Function', link: '/math/delta-function'},
               { text: 'SVD Decomposition', link: '/math/svd-decomposition'},
               { text: 'Topology', link: '/math/intro-topo' }
+            ]
+          },
+          {
+            text: '其他',
+            items: [
+              { text: '密码学', link: '/math/密码学小记' }
             ]
           }
         ]
@@ -71,13 +181,18 @@ export default defineConfig({
   // toc: { level: [1, 2, 3] },
   markdown: {
     config: (md) => {
-      md.use(markdownItKatex)
+      md.use(markdownItMathjax3)
     },
     lineNumbers: true
   },
   head: [
-    ['link', { rel: 'icon', href: '/icons/k-avt-favicon.png'}],
-    ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'}],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css'}]
-  ]
+    ['link', { rel: 'icon', href: '/icons/k-avt-favicon.png'}]
+  ],
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => customElements.includes(tag),
+      }
+    }
+  }
 })
