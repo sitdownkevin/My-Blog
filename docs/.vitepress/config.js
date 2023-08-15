@@ -159,6 +159,7 @@ export default defineConfig({
             text: '其他',
             items: [
               { text: '网络编程', link: '/code/网络编程' },
+              { text: '计算机网络', link: '/code/计算机网络' },
               { text: 'Flask | Nginx', link: '/code/Flask以及Nginx'},
               { text: 'Solidity', link: '/code/Solidity小记' }
             ]
