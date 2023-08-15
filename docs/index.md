@@ -2,10 +2,6 @@
 layout: page
 ---
 
-<script setup>
-
-</script>
-
 
 <div class="home-container">
     <div class="home-title">WELCOME TO MY SPACE</div>
