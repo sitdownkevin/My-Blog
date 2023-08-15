@@ -14,8 +14,6 @@ layout: page
 </div>
 
 
-
-
 <style>
 
     .home-container {
