@@ -11,7 +11,6 @@ layout: page
 
 
 <style>
-
     .home-container {
         width: 100vw;
         min-height: calc(100vh - var(--vp-nav-height) * 2);
@@ -25,6 +24,4 @@ layout: page
             user-select: none;
         }
     }
-
-
 </style>
