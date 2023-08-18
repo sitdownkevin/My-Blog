@@ -1,5 +1,5 @@
 ---
-title: Report | Rolling Thunder Bicycles Company
+title: Rolling Thunder Bicycles Company
 ---
 # {{ $frontmatter.title }}
 

@@ -36,15 +36,12 @@ export function scanDir(root_dir) {
 
 
 
-/* debug
 
-const res = scanDir(root_dir)
-fs.writeFile('data.json', JSON.stringify(res), 'utf8', (err) => {
-    if (err) {
-        console.error('Error writing JSON file:', err);
-        return;
-    }
-    console.log('JSON file has been saved.');
-});
-
- */
+// const res = scanDir(root_dir)
+// fs.writeFile('data.json', JSON.stringify(res), 'utf8', (err) => {
+//     if (err) {
+//         console.error('Error writing JSON file:', err);
+//         return;
+//     }
+//     console.log('JSON file has been saved.');
+// });

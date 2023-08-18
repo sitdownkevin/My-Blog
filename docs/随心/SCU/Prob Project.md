@@ -1,21 +1,13 @@
 ---
-title: Project | Multiple Linear Regression for 50 Ad Agency
-date: 2023-07-14 23:08:58
-tags:
-- SCUPI
-- Mathematics
-- Probability
-- Project
-- Data Mining
-mathjax: true
+title: Multiple Linear Regression for 50 Ad Agency
 ---
+# {{ $frontmatter.title }}
 
-# 1. Data Processing
+## 1. Data Processing
 
 In order to know what kind of publicity expenses matters more in determining the profit of a company and what the relation would be, we collect the data from 50 different companies in 3 different cities about their expenses on print media, social media and outdoor advertisement. Based on this data, we could build a model to analyze the relationship.
 
-<!--more-->
-## 1.1 Raw Data
+### 1.1 Raw Data
 
 | Print Media Expenses | Social Media Expenses | Outdoor Ad Expenses | City       | Profit   |
 | -------------------- | --------------------- | ------------------- | ---------- | -------- |
@@ -72,11 +64,11 @@ In order to know what kind of publicity expenses matters more in determining the
 
 The raw data is shown above. 
 
-## 1.2 Drop Zero Data
+### 1.2 Drop Zero Data
 
 Drop all data with null values in the table to prevent extreme outliers.
 
-## 1.3 Categorical Variable
+### 1.3 Categorical Variable
 
 Column “City” contains labels, Mumbai, Chandigah and Delhi, which cannot be used for linear regression. Thus, transform them into dummy variables.
 
@@ -90,7 +82,7 @@ As the table below shows, **(0, 1)** represents **Munbai**, **(1, 0)** represent
 | Chandigah | 1     | 0     |
 | Delhi     | 0     | 0     |
 
-## 1.4 Data Description
+### 1.4 Data Description
 
 Based on these simply processed data, the following figures are drawn. In the data, the spendings of all **46** companies on three different advertising methods are counted.
 
@@ -102,13 +94,13 @@ For profit of the companies, it is distributed in the range of **50,000** to **2
 
 ![Fig 1. Distribution of each variable](https://s2.loli.net/2023/07/17/TvigzoLwDOHsScJ.png)
 
-# 2. Data Test
+## 2. Data Test
 
 In order to use multiple linear regression to build our model, several conditions must be satisfied. Therefore, we use several tests to check out whether the independent variables are good candidates for multiple linear regression.
 
-## 2.1 Linear Relationship between Independent Variables and Dependent Variable
+### 2.1 Linear Relationship between Independent Variables and Dependent Variable
 
-### 2.1.1 Scatter Plot
+#### 2.1.1 Scatter Plot
 
 Three figures below show the value of profit versus three different expenses. 
 
@@ -116,7 +108,7 @@ Fig 2.1 and 2.3 shows a strong linear relationship between profit and print medi
 
 ![Fig 2.](https://s2.loli.net/2023/07/17/fsyCY2eIO8EDV5G.png)
 
-### 2.1.2 Correlation Coefficient
+#### 2.1.2 Correlation Coefficient
 
 To better analyze the linear relationship between profit and expenses, we compute the correlation coefficients, which is shown above.
 
@@ -126,9 +118,9 @@ The table shows strong linear relationships between $y$ and  $x_1, x_3$. But, th
 | --- | ----- | ----- | ----- | ----- | ----- |
 | $y$ | 0.97  | 0.13  | 0.73  | -0.06 | 0.03  |
 
-## 2.2 Independence between Variables
+### 2.2 Independence between Variables
 
-### 2.2.1 Residual Plot
+#### 2.2.1 Residual Plot
 
 In the residual plot we could see that the data points show no significant trend along x **or y axis.
 
@@ -137,9 +129,9 @@ Regarding the source, the data comes from different companies in 3 different cit
 ![Fig 3.](https://s2.loli.net/2023/07/17/VWe1YmwBlgRuFML.png)
 
 
-## 2.3 Normality for Residuals
+### 2.3 Normality for Residuals
 
-### 2.3.1 Q-Q Plot
+#### 2.3.1 Q-Q Plot
 
 To roughly see whether the residuals follow normal distribution, we scatch the quantile-quantile plot, which is shown below.
 
@@ -147,7 +139,7 @@ In the figure, we could see that the scatter points lie close to the marked stra
 
 ![Fig 4.](https://s2.loli.net/2023/07/17/K3s6QhArdTxJH4S.png)
 
-### 2.3.2 **Kolmogorov–Smirnov Test**
+#### 2.3.2 **Kolmogorov–Smirnov Test**
 
 Normality of data is of very high importance in our regression, so we do further K-S test to confirm it.
 
@@ -173,20 +165,20 @@ $$
 D_n=0.1153<D_c=0.1698
 $$
 
-## 2.4 Equal Variance
+### 2.4 Equal Variance
 
-### 2.4.1 Residual - Predicted Value Plot
+#### 2.4.1 Residual - Predicted Value Plot
 
 To build our multiple linear regression model, equal variance is also a very important need. So, we use the residual plot to see if there is an obvious trend of residuals regarding the change of profit. 
 As Fig 5, the residuals seem random and homogeneous around zero, without significant increasing, decreasing or bending. Therefore, we consider our model to be with equal variance.
 
 ![Fig 5.](https://s2.loli.net/2023/07/17/VWe1YmwBlgRuFML.png)
 
-# 3. Data Regression
+## 3. Data Regression
 
-## 3.1 Multicollinearity
+### 3.1 Multicollinearity
 
-### 3.1.1 Correlation Matrix
+#### 3.1.1 Correlation Matrix
 
 |       | $x_1$ | $x_2$ | $x_3$ | $z_1$ | $z_2$ |
 | ----- | ----- | ----- | ----- | ----- | ----- |
@@ -200,7 +192,7 @@ To build our regression model, we must ensure that multicollinearity is not seve
 
 So, we construct the correlation matrix, which is shown in the above table. As all these computations show, most of their correlation coefficients are much smaller than **0.7**. Therefore, our model shows low multicollinearity.
 
-### 3.1.1 Analysis of Eigenvalues
+#### 3.1.1 Analysis of Eigenvalues
 
 For matrix $X'X$, all the eigenvalues are shown above. With all the computations of k, the maximum one gives the value of **7.77**, which is smaller than **100**. Therefore, we could consider our variables to have very low level of multicollinearity and thus could be used in analysis.
 
@@ -220,9 +212,9 @@ $$
 k=\frac{\lambda_1}{\lambda_2}=7.77\lt100
 $$
 
-## 3.2 Regression
+### 3.2 Regression
 
-### 3.2.1 Forward Selection
+#### 3.2.1 Forward Selection
 
 **Step 1:**
 
@@ -264,7 +256,7 @@ $$\hat y=54110+0.8046x_1$$
 That means:
 $$Profit = 54110 + 0.8046 \times Print  Media  Expenses$$
 
-### 3.2.2 Backward Elimination
+#### 3.2.2 Backward Elimination
 
 **Step 1:** Fit all the variables
 
@@ -323,9 +315,9 @@ Therefore, we can reject the null hypothesis for $\beta_1$ but not for $\beta_2$
 
 That is to say, except print media expenses, one certain expense have insignificant impact on the profit under the existence of the other two expenses. Thus, print media expense may be the most important one in the three expenses.
 
-## 4.2 Effects of Different Cities
+### 4.2 Effects of Different Cities
 
-### 4.2.1 One-Way ANOVA
+#### 4.2.1 One-Way ANOVA
 
 We are then interested in whether the cities of these companies have a significant impact on their profit. So, we continue to construct our hypotheses-testing process.
 
@@ -355,7 +347,7 @@ That is to say, the impact of cities on the profit a company make is insignifica
 | SSE    | 42  | 57972381448.24 | 1380294796.39 |        |
 | SST    | 44  | 58190484852.56 |               |        |
 
-# 5. Conclusion
+## 5. Conclusion
 
 From all the processes above, we could get the conclusion that the print media expense matters most in determining the profit, followed by outdoor ad expense and then social media expense. What’s more, the effect of city is insignificant.
 
@@ -377,7 +369,7 @@ Fourth, we can not confirm these 46 companies to have similar conditions and oth
 
 Therefore, if further improvements are to be conducted, ways might be found through the above four points.
 
-# 6. Contributions
+## 6. Contributions
 
 Ke Xu: Planning the structure; programming and coding; data searching, processing and testing; regression; hypotheses tesing; writing report; making slides.
 

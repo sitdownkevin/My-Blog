@@ -46,10 +46,6 @@
     ]
   },
   {
-    "text": "index",
-    "link": "/index"
-  },
-  {
     "text": "math",
     "items": [
       {
@@ -67,39 +63,6 @@
       {
         "text": "密码学小记",
         "link": "/math/密码学小记"
-      }
-    ]
-  },
-  {
-    "text": "myconfig",
-    "items": [
-      {
-        "text": "index",
-        "link": "/myconfig/index"
-      },
-      {
-        "text": "source-conda",
-        "link": "/myconfig/source-conda"
-      },
-      {
-        "text": "source-npm",
-        "link": "/myconfig/source-npm"
-      },
-      {
-        "text": "source-pypi",
-        "link": "/myconfig/source-pypi"
-      },
-      {
-        "text": "source-yarn",
-        "link": "/myconfig/source-yarn"
-      },
-      {
-        "text": "tools-docker",
-        "link": "/myconfig/tools-docker"
-      },
-      {
-        "text": "tools-git",
-        "link": "/myconfig/tools-git"
       }
     ]
   },
@@ -145,10 +108,6 @@
     "text": "others",
     "items": [
       {
-        "text": "index",
-        "link": "/others/index"
-      },
-      {
         "text": "millitary-theory",
         "link": "/others/millitary-theory"
       },
@@ -163,6 +122,45 @@
       {
         "text": "proj-statistics",
         "link": "/others/proj-statistics"
+      }
+    ]
+  },
+  {
+    "text": "环境配置",
+    "items": [
+      {
+        "text": "工具",
+        "items": [
+          {
+            "text": "tools-docker",
+            "link": "/环境配置/工具/tools-docker"
+          },
+          {
+            "text": "tools-git",
+            "link": "/环境配置/工具/tools-git"
+          }
+        ]
+      },
+      {
+        "text": "换源",
+        "items": [
+          {
+            "text": "source-conda",
+            "link": "/环境配置/换源/source-conda"
+          },
+          {
+            "text": "source-npm",
+            "link": "/环境配置/换源/source-npm"
+          },
+          {
+            "text": "source-pypi",
+            "link": "/环境配置/换源/source-pypi"
+          },
+          {
+            "text": "source-yarn",
+            "link": "/环境配置/换源/source-yarn"
+          }
+        ]
       }
     ]
   }

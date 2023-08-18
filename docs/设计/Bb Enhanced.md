@@ -1,8 +1,6 @@
 ---
 title: Bb 增强 | Blackboard Enhanced
-
 ---
-
 # {{ $frontmatter.title }}
 
 ## 安装 

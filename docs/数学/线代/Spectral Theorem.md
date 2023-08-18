@@ -1,19 +1,14 @@
 ---
 title: The Spectral Theorem
-date: 2023-07-15 00:07:56
-tags: 
-- Mathematics
-- Linear Algebra
-mathjax: true
 ---
+# {{ $frontmatter.title }}
 
-> Goal: $Q^TAQ=D$ for any symmetric matrix $A$
-> 
+::: tip Goal
+$Q^TAQ=D$ for any symmetric matrix $A$
+::: 
 
 - By induction method.
 - Find $A\sim B$ and  $B\sim D\longrightarrow A\sim D$
-
-<!--more-->
 
 ASSUME $Q_1=[v_1:v_2:\ldots:v_n]$ an orthogonal matrix for which $Av_1=\lambda_1v_1$.
 

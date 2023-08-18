@@ -33,13 +33,10 @@ const { Layout } = DefaultTheme
 }
 
 a.title {
-  /* margin-left: 20px; */
-  /* font-family:Georgia, 'Times New Roman', Times, serif */
   font-family: 'Lobster', cursive;
 }
 
 .bottom-container {
-  /* border-top-color: var(--vp-c-gutter); */
   border-top: 1px solid var(--vp-c-gutter);
   width: 100%;
   height: calc(var(--vp-nav-height) - 1px);
@@ -54,10 +51,7 @@ a.title {
     max-height: 100%;
     font-family: 'Dancing Script', cursive;
     font-size: 16px;
-    color: var(--vp-c-text-light);
     user-select: none;
   }
 }
-
-
 </style>
