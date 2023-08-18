@@ -1,0 +1,169 @@
+[
+  {
+    "text": "code",
+    "items": [
+      {
+        "text": "Flask以及Nginx",
+        "link": "/code/Flask以及Nginx"
+      },
+      {
+        "text": "frontend-vitepress",
+        "link": "/code/frontend-vitepress"
+      },
+      {
+        "text": "lru-cache",
+        "link": "/code/lru-cache"
+      },
+      {
+        "text": "Solidity小记",
+        "link": "/code/Solidity小记"
+      },
+      {
+        "text": "网络编程",
+        "link": "/code/网络编程"
+      },
+      {
+        "text": "计算机网络",
+        "link": "/code/计算机网络"
+      }
+    ]
+  },
+  {
+    "text": "design",
+    "items": [
+      {
+        "text": "clock",
+        "link": "/design/clock"
+      },
+      {
+        "text": "latex",
+        "link": "/design/latex"
+      },
+      {
+        "text": "lib",
+        "link": "/design/lib"
+      }
+    ]
+  },
+  {
+    "text": "index",
+    "link": "/index"
+  },
+  {
+    "text": "math",
+    "items": [
+      {
+        "text": "delta-function",
+        "link": "/math/delta-function"
+      },
+      {
+        "text": "intro-topo",
+        "link": "/math/intro-topo"
+      },
+      {
+        "text": "svd-decomposition",
+        "link": "/math/svd-decomposition"
+      },
+      {
+        "text": "密码学小记",
+        "link": "/math/密码学小记"
+      }
+    ]
+  },
+  {
+    "text": "myconfig",
+    "items": [
+      {
+        "text": "index",
+        "link": "/myconfig/index"
+      },
+      {
+        "text": "source-conda",
+        "link": "/myconfig/source-conda"
+      },
+      {
+        "text": "source-npm",
+        "link": "/myconfig/source-npm"
+      },
+      {
+        "text": "source-pypi",
+        "link": "/myconfig/source-pypi"
+      },
+      {
+        "text": "source-yarn",
+        "link": "/myconfig/source-yarn"
+      },
+      {
+        "text": "tools-docker",
+        "link": "/myconfig/tools-docker"
+      },
+      {
+        "text": "tools-git",
+        "link": "/myconfig/tools-git"
+      }
+    ]
+  },
+  {
+    "text": "notes",
+    "items": [
+      {
+        "text": "Coach_formula",
+        "link": "/notes/Coach_formula"
+      },
+      {
+        "text": "Java学习",
+        "link": "/notes/Java学习"
+      },
+      {
+        "text": "scu",
+        "items": [
+          {
+            "text": "bb-enhanced",
+            "link": "/notes/scu/bb-enhanced"
+          },
+          {
+            "text": "is-project",
+            "link": "/notes/scu/is-project"
+          },
+          {
+            "text": "media-literacy",
+            "link": "/notes/scu/media-literacy"
+          },
+          {
+            "text": "review-prob",
+            "link": "/notes/scu/review-prob"
+          }
+        ]
+      },
+      {
+        "text": "阿里云ECS-宝塔面板",
+        "link": "/notes/阿里云ECS-宝塔面板"
+      }
+    ]
+  },
+  {
+    "text": "others",
+    "items": [
+      {
+        "text": "index",
+        "link": "/others/index"
+      },
+      {
+        "text": "millitary-theory",
+        "link": "/others/millitary-theory"
+      },
+      {
+        "text": "notes-mayuan",
+        "link": "/others/notes-mayuan"
+      },
+      {
+        "text": "notes-spectral-theorem",
+        "link": "/others/notes-spectral-theorem"
+      },
+      {
+        "text": "proj-statistics",
+        "link": "/others/proj-statistics"
+      }
+    ]
+  }
+]
