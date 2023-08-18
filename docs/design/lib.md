@@ -3,7 +3,7 @@ layout: page
 ---
 
 <script setup>
-    import LibComponent from "../.vitepress/components/IPUCSLibrary.vue"
+    import LibComponent from "../.vitepress/components/IPUCSLibraryVue.vue"
 </script>
 
 <div class="home-container">

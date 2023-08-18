@@ -2,8 +2,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 #body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-family: 'Lato', sans-serif;
     min-width: 300px;
 }
 
@@ -112,52 +110,6 @@ button.btn {
     bottom: 0;
 }
 
-
-.header {
-    background-color: #1c7cdd;
-    color: white;
-    /* width: 100vw; */
-    height: 60px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    user-select: none;
-}
-
-.header-title {
-    font-size: large;
-    font-family: 'Carter One', 'Rasa', serif;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.footer {
-    background-color: #1c7cdd;
-    color: white;
-    /* width: 100vw; */
-    height: 60px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    user-select: none;
-    padding: 10px 10px 10px 10px;
-}
-
-.footer-quote {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-family: 'Carter One', 'Rasa', serif;
-    font-size: xx-small;
-}
 </style>
 
 <template>
@@ -221,8 +173,6 @@ button.btn {
 </template>
 
 <script>
-// todo: import "bootstrap"
-
 export default {
     data() {
         return {
