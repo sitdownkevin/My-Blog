@@ -3,15 +3,15 @@
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
-/**
- * Colors
- * -------------------------------------------------------------------------- */
-
+/* Font setting */
+/* Lobster */
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* Dancing Script */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Vollkorn */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800;900;&display=swap'); /* Noto */
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Noto */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800;900;&display=swap');
 
 
 :root {
@@ -24,7 +24,7 @@
     --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
 
     /* Typography */
-    --vp-font-family-base: 'Noto Sans SC', "Vollkorn", "Microsoft YaHei", sans-serif;
+    --vp-font-family-base: 'Noto Sans SC', "Microsoft YaHei", sans-serif;
 
 
     /* --vp-font-family-mono: "Space Mono", Menlo, Monaco, Consolas, "Courier New",
@@ -79,6 +79,7 @@
     }
 }
 
+
 header {
     .container {
         /* border: 2px solid black; */
@@ -113,18 +114,20 @@ header {
     --vp-custom-block-tip-border: var(--vp-c-brand);
     --vp-custom-block-tip-text: var(--vp-c-brand-darker);
     --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+
+    --vp-custom-home-title: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
 }
 
 .dark {
     --vp-custom-block-tip-border: var(--vp-c-brand);
     --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
     --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+
+    --vp-custom-home-title: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 }
 
-/**
- * Component: Algolia
- * -------------------------------------------------------------------------- */
 
+/* Search */
 .DocSearch {
     --docsearch-primary-color: var(--vp-c-brand) !important;
 }
@@ -138,3 +141,9 @@ mjx-container {
 mjx-container > svg {
     margin: auto;
 }
+
+
+/* Code Block */
+
+
+

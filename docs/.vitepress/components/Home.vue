@@ -10,6 +10,7 @@
 
 
 <style scoped>
+
 .home-container {
   width: 100vw;
   min-height: calc(100vh - var(--vp-nav-height) * 2);
@@ -23,8 +24,11 @@
     font-size: 1.5rem;
     user-select: none;
     font-family: "Vollkorn", serif;
-    font-style: italic;
-    font-weight: 900;
+    //font-style: italic;
+    font-weight: 700;
+    //background-image: var(--vp-custom-home-title);
+    //-webkit-background-clip: text;
+    //color: transparent;
   }
 }
 </style>
