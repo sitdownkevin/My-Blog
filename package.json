@@ -6,10 +6,9 @@
   "license": "MIT",
   "devDependencies": {
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "5.3.1",
+    "bootstrap": "^5.3.1",
     "markdown-it": "^13.0.1",
     "markdown-it-mathjax3": "^4.3.2",
-    "naive-ui": "^2.34.4",
     "vitepress": "^1.0.0-rc.4"
   },
   "scripts": {
@@ -17,5 +16,9 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:serve": "vitepress serve docs"
+  },
+  "dependencies": {
+    "bootstrap-vue": "^2.23.1",
+    "vue": "^2.5.17"
   }
 }

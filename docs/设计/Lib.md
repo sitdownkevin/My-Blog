@@ -3,12 +3,14 @@ layout: page
 ---
 
 <script setup>
-    import LibComponent from "../.vitepress/components/IPUCSLibraryVue.vue"
+    import LibComponent from "../.vitepress/components/IPUCSLibrary.vue"
 </script>
+
 
 <div class="home-container">
     <LibComponent />
 </div>
+
 
 <style>
     .home-container {
