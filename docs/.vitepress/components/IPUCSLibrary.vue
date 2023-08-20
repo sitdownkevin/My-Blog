@@ -29,47 +29,43 @@
     /* border: 1px solid blue; */
 }
 
-
-@media (min-width: 576px) and (max-width: 768px) {
+@media (max-width: 576px) {
     .col {
         width: 100%;
     }
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
+
+
+@media (min-width: 576px) and (max-width: 930px) {
     .col {
         width: 50%;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 930px) and (max-width: 1200px) {
     .col {
         width: 33.3%;
     }
+}
 
-    .container-parent {
-        padding: 0 70px 0 70px;
+@media (min-width: 1200px) {
+    .col {
+        width: 25%;
     }
 
-    .book-title {
-        -webkit-line-clamp: 2 !important;
+    .container-parent {
+        padding: 0 100px 0 100px;
     }
 }
 
 
 
 #body {
-    /* min-width: 300px; */
-    width: 100vw;
+    width: 100%;
+    min-width: 300px;
 }
 
-button.btn {
-    border-radius: 8px;
-    padding: 0 7px 0 7px;
-    border: 1px solid #007bff;
-
-    font-size: 5px;
-}
 
 .container-parent {
     min-height: calc(100vh - 134px);
@@ -124,6 +120,12 @@ button.btn {
 }
 
 
+.book-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .book-tags {
     text-align: left;
     font-size: 10px;
@@ -157,6 +159,49 @@ button.btn {
     position: absolute;
     bottom: 0;
 }
+
+
+.btn {
+    border-radius: 7px 7px 7px 7px;
+    padding: 0 8px 0 8px;
+    border: 1px solid #007bff;
+
+    font-size: 5px;
+}
+
+.btn.hovered {
+    background-color: #007bff;
+    color: white;
+}
+
+
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+    .menu-item {
+        /* border: 1px solid black; */
+        padding: 2px 2px 2px 2px;
+        .menu-item-btn {
+            text-align: center;
+            padding: 2px 5px 2px 5px;
+            border-radius: 7px 7px 7px 7px;
+            font-size: 12px;
+            min-width: 30px;
+            cursor: pointer;
+            font-family: var(--vp-font-family-base);
+        }
+        .menu-item-btn.selected {
+            border: 1px solid #007bff;
+            background-color: #007bff;
+            color: white;
+        }
+    }
+}
 </style>
 
 <template>
@@ -164,17 +209,19 @@ button.btn {
         <div class="container-parent">
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <ul class="dropdown-menu" style="border: 1px solid #007bff; border-radius: 8px; margin-top: 5px;">
-                            <li v-for="tag in tags" :key="tag.name" style="cursor: pointer; font-size: .75rem;">
-                                <div @click="changeDisplay(tag.name)"><b>{{ tag.name }}</b></div>
-                            </li>
-                        </ul>
+                    <div class="menu">
+                        <div class="menu-item"
+                         v-for="(tag, index) in tags" :key="index">
+                            <div class="menu-item-btn" :class="{'selected': tag.name === selected_tags}"
+                             @click="changeDisplay(tag.name)">
+                                <b>{{ tag.name }}</b>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col" v-for="book in displayed_books">
+                    <div class="col" v-for="(book, index) in displayed_books" :key="index">
                         <div class="row book-container">
                             <div class="book-cover">
                                 <img :src="book.cover" class="book-cover-img">
@@ -184,12 +231,14 @@ button.btn {
                                 <b class="book-title">
                                     {{ book.name }}
                                 </b>
-                                <p :class="'book-tags tag-' + book.tags">
-                                    {{ book.tags }}
-                                </p>
 
                                 <div class="book-link">
-                                    <button type="button" class="btn" @click="downloadBook(book.link)">
+                                    <p :class="'book-tags tag-' + book.tags" style="margin-right: 10px;">
+                                        {{ book.tags }}
+                                    </p>
+                                    <button class="btn" :class="{ 'hovered': index === hoveredIndex }"
+                                        @click="downloadBook(book.link)" @mouseover="setHoveredIndex(index)"
+                                        @mouseleave="setHoveredIndex(null)">
                                         Download
                                     </button>
                                 </div>
@@ -217,10 +266,14 @@ export default {
                 { 'name': 'ECE' },
                 { 'name': 'MEMS' },
                 { 'name': 'ME' }
-            ]
+            ],
+            hoveredIndex: null
         }
     },
     methods: {
+        setHoveredIndex(index) {
+            this.hoveredIndex = index;
+        },
         downloadBook(link) {
             console.log(link);
             window.open(link);

@@ -1,9 +1,10 @@
 ---
 layout: page
+title: SCUPI Library
 ---
 
 <script setup>
-    import LibComponent from "../.vitepress/components/IPUCSLibrary.vue"
+    import LibComponent from "../../.vitepress/components/IPUCSLibrary.vue"
 </script>
 
 
