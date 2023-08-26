@@ -4,8 +4,6 @@ $$
 \mathrm{Score}=\alpha(\mathcal{H}(x_i^{\mathcal{U}}))-\frac1\alpha(\mathcal{MI}(x_i^{\mathcal{U}},\mathcal{T}))
 $$
 
->  $\alpha$？$\alpha=1$ -> $\alpha=7$
-
 - $\mathcal{H(x_i^{\mathcal{U}})}$
 
 $$
@@ -36,17 +34,32 @@ $$
 \mathrm{Score_3}=\mathcal{MI}(x_i^{\mathcal{U}},\mathcal{U})
 $$
 
+
+
+
+
+
+
+
+
+
+
 ## New
 
 $$
-\mathrm{Score_1}=\mathcal{H}(x_i^{\mathcal{U}})\cdot(1+\lambda(x_i^{\mathcal{U}}))
-$$
-
-$$
-\mathrm{Score_2}=\frac{\mathcal{MI(x_i^{\mathcal{U}},\mathcal{U})}}{\mathcal{MI(x_i^{\mathcal{U}},\mathcal{T})}}
+\mathrm{Score_1}=\mathcal{H}(x_i^{\mathcal{U}})+\lambda(x_i^{\mathcal{U}})
 $$
 
 $$
 \mathrm{Score_2}=\alpha\cdot\mathcal{MI(x_i^{\mathcal{U}},\mathcal{U})}-\frac1\alpha\cdot\mathcal{MI(x_i^{\mathcal{U}},\mathcal{T})}
 $$
+
+> $\alpha=1$
+
+
+
+
+
+
+
 
