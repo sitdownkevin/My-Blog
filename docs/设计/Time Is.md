@@ -2,12 +2,12 @@
 layout: page
 ---
 <script setup>
-    import ClockComponent from "../.vitepress/components/ClockComponent.vue"
+    import TimeIs from "../.vitepress/components/TimeIs.vue"
 </script>
 
 
 <div class="home-container">
-    <ClockComponent />
+    <TimeIs />
 </div>
 
 

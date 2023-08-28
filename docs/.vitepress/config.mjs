@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import vue from '@vitejs/plugin-vue'
 import markdownItMathjax3 from 'markdown-it-mathjax3'
 
 const customElements = [
@@ -131,6 +130,5 @@ export default defineConfig({
         isCustomElement: (tag) => customElements.includes(tag),
       }
     }
-  },
-  plugins: [vue()]
+  }
 })
