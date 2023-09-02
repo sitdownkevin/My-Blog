@@ -16,7 +16,7 @@ var web3 = new Web3(
 )
 ```
 
-> 这里使用的RPC地址是`"HTTP://127.0.0.1:7545"`，是[Ganache]()的默认地址。
+> 这里使用的RPC地址是`"HTTP://127.0.0.1:7545"`，是[Ganache](https://trufflesuite.com/ganache/)的默认地址。
 
 ## `web3.eth`
 
