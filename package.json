@@ -16,5 +16,7 @@
     "docs:preview": "vitepress preview docs",
     "docs:serve": "vitepress serve docs"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sass": "^1.66.1"
+  }
 }
