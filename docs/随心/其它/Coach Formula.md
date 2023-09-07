@@ -1,4 +1,9 @@
-# NVIDIA
+---
+title: Coach Formula
+---
+# {{ $frontmatter.title }}
+
+## NVIDIA formula
 
 $$
 \mathrm{Score}=\alpha(\mathcal{H}(x_i^{\mathcal{U}}))-\frac1\alpha(\mathcal{MI}(x_i^{\mathcal{U}},\mathcal{T}))
@@ -18,10 +23,9 @@ $$
 \mathcal{MI}=\sum_{x_i^{\mathcal{T}}} P(x_i^{\mathcal{U}},x_i^{\mathcal{T}})\log(\frac{P(x_i^{\mathcal{T}},x_j^{\mathcal{U}})}{P(x_i^{\mathcal{T}})P(x_j^{\mathcal{U}})})
 $$
 
-# Coach
+## Coach formula
 
-## Old
-
+:::details Old
 $$
 \mathrm{Score_1}=\mathcal{H}(x_i^{\mathcal{U}})+\lambda(x_i^{\mathcal{U}})
 $$
@@ -33,18 +37,7 @@ $$
 $$
 \mathrm{Score_3}=\mathcal{MI}(x_i^{\mathcal{U}},\mathcal{U})
 $$
-
-
-
-
-
-
-
-
-
-
-
-## New
+:::
 
 $$
 \mathrm{Score_1}=\mathcal{H}(x_i^{\mathcal{U}})+\lambda(x_i^{\mathcal{U}})
@@ -56,8 +49,36 @@ $$
 
 > $\alpha=1$
 
+## Dataset
+:::info CHAOS - Combined (CT-MR) Healthy Abdominal Organ Segmentation
+
+[Homepage](https://chaos.grand-challenge.org/)
+
+![](https://cdn.jsdelivr.net/gh/sitdownkevin/ImageHosting//20230907084851.png)
+
+:::
+
+:::info Liver and Liver Tumor Segmentation
+
+[Kaggle homepage](https://www.kaggle.com/datasets/andrewmvd/lits-png) | [Homepage](https://competitions.codalab.org/competitions/17094)
+
+The liver is a common site of primary (i.e. originating in the liver like hepatocellular carcinoma, HCC) or secondary (i.e. spreading to the liver like colorectal cancer) tumor development. Due to their heterogeneous and diffusive shape, automatic segmentation of tumor lesions is very challenging. Until now, only interactive methods achieved acceptable results segmenting liver lesions.
+
+130 CT scans, resized to 256x256 and converted to PNG for segmentation of the liver as well as tumor lesions.
+
+![](https://cdn.jsdelivr.net/gh/sitdownkevin/ImageHosting//20230907085510.png)
+
+:::
 
 
+:::info BKAI-IGH NeoPolyp-Small
+[Kaggle homepage](https://www.kaggle.com/c/bkai-igh-neopolyp/) 
+
+This dataset contains 1200 images (1000 WLI images and 200 FICE images) with fine-grained segmentation annotations. The training set consists of 1000 images, and the test set consists of 200 images. All polyps are classified into neoplastic or non-neoplastic classes denoted by red and green colors, respectively. 
+
+![](https://cdn.jsdelivr.net/gh/sitdownkevin/ImageHosting//20230907084314.png)
+
+:::
 
 
 
