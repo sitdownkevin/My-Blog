@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import markdownItMathjax3 from 'markdown-it-mathjax3'
+// import markdownItMathjax3 from 'markdown-it-mathjax3'
 
 const customElements = [
   'mjx-container',
@@ -116,10 +116,7 @@ export default defineConfig({
   },
   // toc: { level: [1, 2, 3] },
   markdown: {
-    config: (md) => {
-      md.use(markdownItMathjax3)
-    },
-    lineNumbers: true
+    math: true
   },
   head: [
     ['link', { rel: 'icon', href: '/icons/k-avt-favicon.png'}]

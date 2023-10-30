@@ -4,14 +4,12 @@ import DefaultTheme from 'vitepress/theme'
 const { Layout } = DefaultTheme
 
 
+
 </script>
 
 <template>
 
   <Layout>
-    <template #not-found>
-        <h1>没有此页面</h1>
-    </template>
 
     <template #layout-bottom>
       <div class="bottom-container">

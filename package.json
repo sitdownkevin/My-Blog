@@ -17,6 +17,10 @@
     "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
+    "@fontsource/dancing-script": "^5.0.15",
+    "@fontsource/lobster": "^5.0.17",
+    "@fontsource/noto-sans": "^5.0.17",
+    "@fontsource/vollkorn": "^5.0.17",
     "sass": "^1.66.1"
   }
 }
