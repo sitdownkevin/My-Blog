@@ -1,6 +1,7 @@
 ---
 title: Multiple Linear Regression for 50 Ad Agency
 ---
+
 # {{ $frontmatter.title }}
 
 ## 1. Data Processing
@@ -62,7 +63,7 @@ In order to know what kind of publicity expenses matters more in determining the
 | 542.05               | 51743.15              | 0                   | Mumbai     | 35673.41 |
 | 0                    | 116983.8              | 45173.06            | Chandigarh | 14681.4  |
 
-The raw data is shown above. 
+The raw data is shown above.
 
 ### 1.2 Drop Zero Data
 
@@ -72,9 +73,9 @@ Drop all data with null values in the table to prevent extreme outliers.
 
 Column “City” contains labels, Mumbai, Chandigah and Delhi, which cannot be used for linear regression. Thus, transform them into dummy variables.
 
-Because there are three different cities, two dummy variables $z_1$ and $z_2$ are needed. 
+Because there are three different cities, two dummy variables $z_1$ and $z_2$ are needed.
 
-As the table below shows, **(0, 1)** represents **Munbai**, **(1, 0)** represents **Chandigah**, and **(0, 0)** represents **Delhi**. 
+As the table below shows, **(0, 1)** represents **Munbai**, **(1, 0)** represents **Chandigah**, and **(0, 0)** represents **Delhi**.
 
 |           | $z_1$ | $z_2$ |
 | --------- | ----- | ----- |
@@ -90,9 +91,9 @@ For print media expenses and social media expenses, the overall spending level i
 
 For print and social media expenses, up to 6 sets of data locates in the same range, and for outdoor advertising spending, up to 7 sets. Regarding cities of the companies, Mumbai and Chandigah each accounts for 15, and Delhi 16.
 
-For profit of the companies, it is distributed in the range of **50,000** to **200,000**.  Most of the companies have a profit around **100,000**. There is only one company with a profit of 50000, and four companies with a profit of 200000, accounting for a very small proportion.
+For profit of the companies, it is distributed in the range of **50,000** to **200,000**. Most of the companies have a profit around **100,000**. There is only one company with a profit of 50000, and four companies with a profit of 200000, accounting for a very small proportion.
 
-![Fig 1. Distribution of each variable](https://s2.loli.net/2023/07/17/TvigzoLwDOHsScJ.png)
+![1699261215166](https://cdn.statically.io/gh/sitdownkevin/ImageHosting@main/1699261215166.png)
 
 ## 2. Data Test
 
@@ -102,32 +103,33 @@ In order to use multiple linear regression to build our model, several condition
 
 #### 2.1.1 Scatter Plot
 
-Three figures below show the value of profit versus three different expenses. 
+Three figures below show the value of profit versus three different expenses.
 
 Fig 2.1 and 2.3 shows a strong linear relationship between profit and print media expenses and outdoor ad expenses. Fig 2.2 shows the weak linear relationships between profit and social media expenses.
 
-![Fig 2.](https://s2.loli.net/2023/07/17/fsyCY2eIO8EDV5G.png)
+![1699261082472](https://cdn.statically.io/gh/sitdownkevin/ImageHosting@main/1699261082472.png)
 
 #### 2.1.2 Correlation Coefficient
 
 To better analyze the linear relationship between profit and expenses, we compute the correlation coefficients, which is shown above.
 
-The table shows strong linear relationships between $y$ and  $x_1, x_3$. But, the relationship between $y$ and $x_2$ is weak, so as $z_1$ and $z_2$. However, $z_1$ and $z_2$ are categorical variables, which just has values of 0 or 1. Therefore, generally profit has linear relationship with expenses.
+The table shows strong linear relationships between $y$ and $x_1, x_3$. But, the relationship between $y$ and $x_2$ is weak, so as $z_1$ and $z_2$. However, $z_1$ and $z_2$ are categorical variables, which just has values of 0 or 1. Therefore, generally profit has linear relationship with expenses.
+
 
 |     | $x_1$ | $x_2$ | $x_3$ | $z_1$ | $z_2$ |
 | --- | ----- | ----- | ----- | ----- | ----- |
 | $y$ | 0.97  | 0.13  | 0.73  | -0.06 | 0.03  |
 
+
 ### 2.2 Independence between Variables
 
 #### 2.2.1 Residual Plot
 
-In the residual plot we could see that the data points show no significant trend along x **or y axis.
+In the residual plot we could see that the data points show no significant trend along x \*\*or y axis.
 
 Regarding the source, the data comes from different companies in 3 different cities, which leads to low interaction between these companies. Together with the residual plot shown above, we roughly consider our variables to be independent.
 
-![Fig 3.](https://s2.loli.net/2023/07/17/VWe1YmwBlgRuFML.png)
-
+![1699261122481](https://cdn.statically.io/gh/sitdownkevin/ImageHosting@main/1699261122481.png)
 
 ### 2.3 Normality for Residuals
 
@@ -137,7 +139,7 @@ To roughly see whether the residuals follow normal distribution, we scatch the q
 
 In the figure, we could see that the scatter points lie close to the marked straight line, which means that the distribution of these residuals are approximately normal.
 
-![Fig 4.](https://s2.loli.net/2023/07/17/K3s6QhArdTxJH4S.png)
+![1699261153558](https://cdn.statically.io/gh/sitdownkevin/ImageHosting@main/1699261153558.png)
 
 #### 2.3.2 **Kolmogorov–Smirnov Test**
 
@@ -169,10 +171,10 @@ $$
 
 #### 2.4.1 Residual - Predicted Value Plot
 
-To build our multiple linear regression model, equal variance is also a very important need. So, we use the residual plot to see if there is an obvious trend of residuals regarding the change of profit. 
+To build our multiple linear regression model, equal variance is also a very important need. So, we use the residual plot to see if there is an obvious trend of residuals regarding the change of profit.
 As Fig 5, the residuals seem random and homogeneous around zero, without significant increasing, decreasing or bending. Therefore, we consider our model to be with equal variance.
 
-![Fig 5.](https://s2.loli.net/2023/07/17/VWe1YmwBlgRuFML.png)
+![1699261184946](https://cdn.statically.io/gh/sitdownkevin/ImageHosting@main/1699261184946.png)
 
 ## 3. Data Regression
 
@@ -185,7 +187,7 @@ As Fig 5, the residuals seem random and homogeneous around zero, without signifi
 | $x_1$ | 1     | 0.2   | 0.71  | -0.08 | 0.04  |
 | $x_2$ | 0.2   | 1     | -0.09 | -0.05 | 0.06  |
 | $x_3$ | 0.71  | -0.09 | 1     | -0.15 | 0.03  |
-| $z_1$ | -0.08 | -0.05 | -0.15 | 1     | -0.48 |
+| $z_1$ | -0.08 | -0.05 | -0.15 | 1 ng  | -0.48 |
 | $z_2$ | 0.04  | 0.06  | 0.03  | -0.48 | 1     |
 
 To build our regression model, we must ensure that multicollinearity is not severe between all these variables, which means that no two variables share highly similar linear relationship between profit and itself.
@@ -228,7 +230,7 @@ $$
 | $x_2$ | $\hat y=94970+0.1812x_2$ | 0.01825 |           |
 | $x_3$ | $\hat y=63050+0.2365x_3$ | 0.53617 |           |
 
-From the $R^2$ we get, we could find that $R^2_1$  > $R^2_2$ > $R^2_3$, and the largest $R^2$ is from $x_1$. Then we will take F-test of  $x_1$. And according to the table of F-test, we could find that f = **952.60249** > $f_{0.05}(k-1,n-k-1)$, so $x_1$  is significant, and we choose $x_1$. Then the procedure will continue and we will insert a new variable.
+From the $R^2$ we get, we could find that $R^2_1$ > $R^2_2$ > $R^2_3$, and the largest $R^2$ is from $x_1$. Then we will take F-test of $x_1$. And according to the table of F-test, we could find that f = **952.60249** > $f_{0.05}(k-1,n-k-1)$, so $x_1$ is significant, and we choose $x_1$. Then the procedure will continue and we will insert a new variable.
 
 **Step 2:**
 
@@ -247,7 +249,7 @@ $$
 
 $$f_{0.05}(k-1, n-k-1) > 3.51402$$
 
-Therefore, adding more variables doesn’t give a significant change to the model. So the procedure is terminated. 
+Therefore, adding more variables doesn’t give a significant change to the model. So the procedure is terminated.
 
 Then we find only $x_1$ gives a significant change to this model, as a result, we could get:
 
@@ -287,9 +289,9 @@ Backward Elimination analysis was performed with Print Media Expenses, Social Me
 
 $$Profit=54110+0.8046x_1\times PrintMediaExpenses$$
 
-# 4. Hypotheses Testing
+## 4. Hypotheses Testing
 
-## 4.1 Effects of Different Kinds of Expenses
+### 4.1 Effects of Different Kinds of Expenses
 
 We are firstly interested in whether one certain expense impacts profit significantly under the condition that other expenses are put. So we use the model containing all the variables to do the hypotheses testing.
 
@@ -307,7 +309,7 @@ $$
 
 In the test, the t values for the critical region are **-2.021** and **2.021**.
 
-For $\beta_1$, we use the data to compute the corresponding $t$-statistic to be **19.8**, which exceeds the  $t$-statistic for the critical region.
+For $\beta_1$, we use the data to compute the corresponding $t$-statistic to be **19.8**, which exceeds the $t$-statistic for the critical region.
 
 Similarly, for $\beta_2$ and $\beta_3$, the corresponding $t$-statistics are about **-1.28** and **1.38**, which are smaller than the corresponding t-statistic for the critical region.
 
@@ -337,7 +339,7 @@ We first set our null hypothesis to be that the means of profit for companies in
 
 For only one single factor is considered there, we use One-Way ANOVA to test our hypothesis and the results are shown above. The treatment sum of squares SSA, with degrees of freedom to be 2, has its mean square about **109051702.16**. And the error sum of squares SSE, with degrees of freedom to be 42, has mean square about **1380294796.39**.
 
-So, the f-statistic computed is  **0.0790**, which is much smaller than the f-statistic for the critical region. Therefore, we can not reject our null hypothesis. Thus, we could get the conclusion that we can not reject the profit of all the companies in three cities share the same mean value.
+So, the f-statistic computed is **0.0790**, which is much smaller than the f-statistic for the critical region. Therefore, we can not reject our null hypothesis. Thus, we could get the conclusion that we can not reject the profit of all the companies in three cities share the same mean value.
 
 That is to say, the impact of cities on the profit a company make is insignificant.
 
@@ -365,18 +367,16 @@ Second, we can not confirm our variables to be of high level of independence.
 
 Third, the multicollinearity between print media expenses and outdoor ad expenses is not very low, which may disturb the regression results.
 
-Fourth, we can not confirm these 46 companies to have similar conditions and other expenses, without which the regression results would be inaccurate. 
+Fourth, we can not confirm these 46 companies to have similar conditions and other expenses, without which the regression results would be inaccurate.
 
 Therefore, if further improvements are to be conducted, ways might be found through the above four points.
 
 ## 6. Contributions
 
-Ke Xu: Planning the structure; programming and coding; data searching, processing and testing; regression; hypotheses tesing; writing report; making slides.
-
-Yifan Chen: Planning the structure; coding; data searching, discription and testing; regression; hypotheses testing; writing report; making slides.
-
-Ruiwen Zhang: Forward selection; writing report.
-
-Zeyi Yang: Backward elimination; writing report.
-
-Zhuo Wang: Data description; writing report.
+| Team Member  | Contributions                                                                                                                                          |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Ke Xu        | Planning the structure; programming and coding; data searching, processing and testing; regression; hypotheses testing; writing report; making slides. |
+| Yifan Chen   | Planning the structure; coding; data searching, description and testing; regression; hypotheses testing; writing report; making slides.                |
+| Ruiwen Zhang | Forward selection; writing report.                                                                                                                     |
+| Zeyi Yang    | Backward elimination; writing report.                                                                                                                  |
+| Zhuo Wang    | Data description; writing report.                                                                                                                      |

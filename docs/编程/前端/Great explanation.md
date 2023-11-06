@@ -1,4 +1,14 @@
-# Great explanation
+---
+title: Great Explanation
+---
+
+# {{ $frontmatter.title }}
+
+:::info Background
+> While browsing the Internet, particularly when encountering difficulties in searching for information on various websites, I find certain explanations truly captivating. - 2023.11.6
+:::
+
+[[toc]]
 
 ## Front-end
 
@@ -29,3 +39,7 @@ Note that browsers don’t understand JSX out of the box, so you’ll need a Jav
   (webpack)
 
 - Code Splitting
+
+### Difference between `--save` and `--save-dev`
+
+When installing a package that will be bundled into your production bundle, you should use `npm install --save`. If you're installing a package for development purposes (e.g. a linter, testing libraries, etc.) then you should use `npm install --save-dev`.

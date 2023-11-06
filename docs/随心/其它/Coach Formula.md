@@ -54,7 +54,7 @@ $$
 
 [Homepage](https://chaos.grand-challenge.org/)
 
-![](https://cdn.jsdelivr.net/gh/sitdownkevin/ImageHosting//20230907084851.png)
+![1699260885748](https://cdn.statically.io/gh/sitdownkevin/ImageHosting@main/1699260885748.png)
 
 :::
 
@@ -66,7 +66,7 @@ The liver is a common site of primary (i.e. originating in the liver like hepato
 
 130 CT scans, resized to 256x256 and converted to PNG for segmentation of the liver as well as tumor lesions.
 
-![](https://cdn.jsdelivr.net/gh/sitdownkevin/ImageHosting//20230907085510.png)
+![1699260928004](https://cdn.statically.io/gh/sitdownkevin/ImageHosting@main/1699260928004.png)
 
 :::
 
@@ -76,7 +76,7 @@ The liver is a common site of primary (i.e. originating in the liver like hepato
 
 This dataset contains 1200 images (1000 WLI images and 200 FICE images) with fine-grained segmentation annotations. The training set consists of 1000 images, and the test set consists of 200 images. All polyps are classified into neoplastic or non-neoplastic classes denoted by red and green colors, respectively. 
 
-![](https://cdn.jsdelivr.net/gh/sitdownkevin/ImageHosting//20230907084314.png)
+![1699260961445](https://cdn.statically.io/gh/sitdownkevin/ImageHosting@main/1699260961445.png)
 
 :::
 

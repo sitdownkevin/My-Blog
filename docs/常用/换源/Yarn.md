@@ -4,7 +4,7 @@ layout: doc
 ---
 # {{ $frontmatter.title }}
 
-:::tip
+:::info
 配置为淘宝源
 :::
 
@@ -12,7 +12,7 @@ layout: doc
 ### 方法一：命令行
 ```shell
 # 换为淘宝源
-yarn config set registry https://registry.npm.taobao.org
+yarn config set registry https://registry.npm.taobao.org // [!code warning]
 
 # 恢复默认
 yarn config set registry https://registry.yarnpkg.com
@@ -32,7 +32,7 @@ chromedriver_cdnurl "https://cdn.npm.taobao.org/dist/chromedriver"
 :::
 
 
-## 其他命令
+## 其他
 ```shell
 # 查询当前源
 yarn config get registry

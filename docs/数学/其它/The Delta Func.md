@@ -1,6 +1,7 @@
 ---
 title: The Delta Function
 ---
+
 # {{ $frontmatter.title }}
 
 ## Definition
@@ -8,7 +9,7 @@ title: The Delta Function
 $$
 \int_p^{p+\epsilon}\delta_p^\delta(t)dt=1
 $$
-<!--more-->
+
 $$
 \delta_p^\epsilon(t)=\left\{\begin{aligned}\frac{1}{\epsilon},&\ p\le t\lt p+\epsilon\\0, &\ elsewhere\end{aligned}\right.
 $$

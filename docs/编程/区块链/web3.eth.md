@@ -1,19 +1,19 @@
-# `web3js` 学习
+# web3.eth Starter
 
-:::tip 
+:::info
 
-[中文文档](https://learnblockchain.cn/docs/web3.js/web3-eth.html) | [英文文档](https://docs.web3js.org/)
+[中文文档](https://learnblockchain.cn/docs/web3.js/web3-eth.html)
+
+[英文文档](https://docs.web3js.org/)
 
 :::
 
 ## 引入`web3js`
 
 ```js
-const { Web3 } = require('web3')
+const { Web3 } = require("web3");
 
-var web3 = new Web3(
-	new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545")
-)
+var web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
 ```
 
 > 这里使用的地址是`"HTTP://127.0.0.1:7545"`，是[Ganache](https://trufflesuite.com/ganache/)的默认地址。
@@ -23,7 +23,7 @@ var web3 = new Web3(
 :::details 随便敲了几下
 
 ```js
-var eth = web3.eth
+var eth = web3.eth;
 ```
 
 ### `getAccounts`
@@ -31,8 +31,7 @@ var eth = web3.eth
 返回节点所控制的账户列表。
 
 ```js
-eth.getAccounts()
-	.then(console.log)
+eth.getAccounts().then(console.log);
 ```
 
 ### `getBlockNumber`
@@ -40,8 +39,7 @@ eth.getAccounts()
 返回当前区块号。
 
 ```js
-eth.getBlockNumber()
-	.then(console.log)
+eth.getBlockNumber().then(console.log);
 ```
 
 ### `getBalance`
@@ -49,10 +47,9 @@ eth.getBlockNumber()
 返回地址在指定区块的余额。
 
 ```js
-const address = '0x022344806d93a80A347a0CA9C7b13a4F63aee128'
+const address = "0x022344806d93a80A347a0CA9C7b13a4F63aee128";
 
-eth.getBalance(address)
-	.then(console.log)
+eth.getBalance(address).then(console.log);
 ```
 
 ### `getBlock`
@@ -60,10 +57,9 @@ eth.getBalance(address)
 返回与区块号或区块哈希匹配的**区块**。
 
 ```js
-const blockHashOrBlockNumber = 0
+const blockHashOrBlockNumber = 0;
 
-eth.getBlock(blockHashOrBlockNumber)
-	.then(console.log)
+eth.getBlock(blockHashOrBlockNumber).then(console.log);
 ```
 
 ### `getTransaction`
@@ -71,9 +67,9 @@ eth.getBlock(blockHashOrBlockNumber)
 返回匹配给定交易哈希的**交易对象**。
 
 ```js
-eth.getTransaction(transactionHash)
-	.then(console.log)
+eth.getTransaction(transactionHash).then(console.log);
 ```
+
 :::
 
 ## 部署智能合约
@@ -82,8 +78,8 @@ eth.getTransaction(transactionHash)
 
 :::details 代码
 
-
 :::code-group
+
 ```Solidity [contract.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -104,7 +100,6 @@ contract Starter {
     }
 }
 ```
-
 
 ```Typescript [deploy_contract.ts] {15-40}
 import { Web3 } from 'web3';
@@ -148,6 +143,4 @@ async function deploy() {
 deploy();
 ```
 
-
-::: 
-
+:::

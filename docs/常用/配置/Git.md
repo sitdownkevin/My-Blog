@@ -3,14 +3,12 @@ title: 使用Git的一些步骤
 ---
 # {{ $frontmatter.title }}
 
-::: info 参考资料
+::: info Reference
 
-1. https://www.liaoxuefeng.com/wiki/896043488029600 
-2. https://www.runoob.com/git/git-tutorial.html
+[Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
 
+[Git 教程 - RUNOOB.COM](https://www.runoob.com/git/git-tutorial.html)
 :::
-
-[[toc]]
 
 ## 配置 Git 邮箱和用户名
 
@@ -116,7 +114,7 @@ git remote -v
 git remote rm <origin>
 ```
 
-## 额外的
+## 其他
 
 ### 配置代理
 
@@ -134,6 +132,9 @@ git config --list
 ### 种族主义和奴隶制度
 
 ```shell
-# 防止master带来的种族主义和奴隶制度问题，Github使用main替代master分支
 git branch -M main
 ```
+
+:::warning 种族歧视
+git默认分支的名称是master。master涉嫌了种族歧视，因此Github的默认分支名为main。在push到Github之前需要将本地master分支的名称改为main。
+:::

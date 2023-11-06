@@ -20,7 +20,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 npm config set registry https://registry.npmjs.org
 ```
 
-## 其他命令
+## 其他
 
 ```shell
 # 验证是否设置成功

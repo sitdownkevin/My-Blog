@@ -1,12 +1,11 @@
 ---
 title: Solidity 小记
 layout: doc
-
 ---
 
 # {{ $frontmatter.title }}
 
-::: tip
+:::info
 仅记录学习Solidity当中感到困惑的问题
 ::: 
 

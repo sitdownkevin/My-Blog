@@ -1,7 +1,10 @@
-# C Makefile
+---
+title: Makefile
+---
+# {{ $frontmatter.title }}
 
-::: tip 参考文献
-https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
+:::info Reference
+[A Simple Makefile Tutorial](https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/)
 :::
 
 ## 准备三个文件
