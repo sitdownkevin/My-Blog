@@ -1,6 +1,5 @@
 ---
-title: Docker
-date: 2023-11-06 12:00:00 +0800
+title: Docker Tips
 ---
 # {{ $frontmatter.title }}
 

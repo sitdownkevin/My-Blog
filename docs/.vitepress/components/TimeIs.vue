@@ -1,11 +1,7 @@
 <template>
-
     <div class="time-is" :style="`font-size: ${font_size}px`">
       {{ cur_time }}
     </div>
-
-
-
 </template>
 
 <script>
@@ -31,10 +27,10 @@ export default {
     }
 
 
-    const nav = document.querySelector('.VPNav')
-    nav.style.cssText = `
-      display: none;
-    `
+    // const nav = document.querySelector('.VPNav')
+    // nav.style.cssText = `
+    //   display: none;
+    // `
 
     const btm = document.querySelector('.bottom-container')
     btm.style.cssText = `
@@ -42,10 +38,10 @@ export default {
     `
   },
   unmounted() {
-    const nav = document.querySelector('.VPNav')
-    nav.style.cssText = `
-      display: ;
-    `
+    // const nav = document.querySelector('.VPNav')
+    // nav.style.cssText = `
+    //   display: ;
+    // `
 
     const btm = document.querySelector('.bottom-container')
     btm.style.cssText = `

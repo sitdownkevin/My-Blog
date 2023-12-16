@@ -4,8 +4,8 @@ title: Vitepress 的一些配置
 
 # {{ $frontmatter.title }}
 
-:::info 前情提要
-此博客基于 vitepress 搭建。不论是从美学还是工程学上，vitepress 都很优秀，但在使用的过程中仍然遇到了不少问题，在此记录。
+:::info emmmm
+vitepress 很好用，也有很多问题...
 :::
 
 ## LaTeX Support

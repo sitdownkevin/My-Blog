@@ -1,13 +1,14 @@
 ---
-title: 使用Git的一些步骤
+title: Git Tips
 ---
 # {{ $frontmatter.title }}
 
-::: info Reference
+:::info
+最好用的还得是 GUI 客户端...
 
-[Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
+Linux: https://github.com/shiftkey/desktop
 
-[Git 教程 - RUNOOB.COM](https://www.runoob.com/git/git-tutorial.html)
+macOS & Windows: https://desktop.github.com/
 :::
 
 ## 配置 Git 邮箱和用户名

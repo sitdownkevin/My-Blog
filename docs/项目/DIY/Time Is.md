@@ -2,7 +2,7 @@
 layout: page
 ---
 <script setup>
-    import TimeIs from "../.vitepress/components/TimeIs.vue"
+    import TimeIs from "../../.vitepress/components/TimeIs.vue"
 </script>
 
 

@@ -3,9 +3,7 @@ title: Homebrew
 ---
 
 # {{ $frontmatter.title }}
-:::info emmmm
-Brew 居然没有一键更新所有 Cask 的命令，自己写一个：
-
+:::info Brew 居然没有一键更新所有 Cask 的命令，自己写一个
 `brew list --cask | xargs -I {} brew upgrade --cask {}`
 :::
 

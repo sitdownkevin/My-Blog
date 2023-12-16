@@ -10,7 +10,6 @@ const { Layout } = DefaultTheme
 <template>
 
   <Layout>
-
     <template #layout-bottom>
       <div class="bottom-container">
         <span class="bottom-slogan">One day we will climb the highest mountain, and suvey the smallest point.</span>
@@ -52,4 +51,5 @@ a.title {
     user-select: none;
   }
 }
+
 </style>
