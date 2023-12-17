@@ -102,7 +102,6 @@ export default defineConfig({
   publicPath: './',
   description: "My personal blog",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     logo: '/icons/k-avt.jpg',
     nav: nav,
     socialLinks: [
@@ -112,6 +111,18 @@ export default defineConfig({
     ],
     search: {
       provider: 'local'
+    },
+    editLink: {
+      pattern: 'https://github.com/sitdownkevin/My-Blog/tree/main/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
+    returnToTopLabel: 'Back to top',
+    lastUpdated: {
+      text: 'Last Updated',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'medium'
+      }
     }
   },
   // toc: { level: [1, 2, 3] },
