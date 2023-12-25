@@ -1,8 +1,8 @@
 ---
-title: Inventory Management
+title: Supply Chain Review
 ---
 
-# {{ $frontmater.title }}
+# {{ $frontmatter.title }}
 
 ## Economic Lot Size Model
 
