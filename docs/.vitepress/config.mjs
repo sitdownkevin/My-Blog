@@ -101,6 +101,7 @@ export default defineConfig({
   title: "k's Space",
   publicPath: './',
   description: "My personal blog",
+  base: '/My-Blog/',
   themeConfig: {
     logo: '/icons/k-avt.jpg',
     nav: nav,
